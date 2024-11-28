@@ -7,7 +7,6 @@
 
 package twitter_t;
 
-import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,7 +14,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/twitter";
     private static final String USER = "root";
-    private static final String PASSWORD = "1234567890";
+    private static final String PASSWORD = "2726";
 
     private static Connection connection = null;
 
@@ -25,12 +24,11 @@ public class DatabaseConnection {
             // 기존 연결이 없거나 연결이 끊어진 경우에만 새로운 연결을 생성
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
-                JOptionPane.showMessageDialog(null, "데이터베이스에 연결되었습니다.", "알림", JOptionPane.INFORMATION_MESSAGE);
+                // JOptionPane 메시지 제거
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "데이터베이스 연결에 실패했습니다.", "오류", JOptionPane.ERROR_MESSAGE);
-            connection = null; // 연결 실패 시 null로 설정
+            throw new RuntimeException("데이터베이스 연결에 실패했습니다.");
         }
 
         return connection;

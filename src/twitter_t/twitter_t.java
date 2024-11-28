@@ -7,12 +7,12 @@
 
 package twitter_t;
 
+import javax.swing.SwingUtilities;
+
 public class twitter_t {
     public static void main(String[] args) {
-        // 애플리케이션의 시작점
+        // 애플리케이션 시작: 로그인 화면 호출
         System.out.println("Twitter_T 애플리케이션 시작");
-        
-        // MainApp 실행
-        new MainApp();
+        SwingUtilities.invokeLater(LoginFrame::new); // 로그인 화면 실행
     }
 }

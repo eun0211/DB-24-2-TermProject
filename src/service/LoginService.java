@@ -21,7 +21,7 @@ public class LoginService {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                // 로그인 성공
+                // 로그인 성공 메시지 수정
                 JOptionPane.showMessageDialog(null, "로그인 성공", "알림", JOptionPane.INFORMATION_MESSAGE);
                 return true;
             } else {
