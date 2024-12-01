@@ -12,9 +12,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/twitter";
+    private static final String URL = "jdbc:mysql://localhost:3306/twitter_t";
     private static final String USER = "root";
-    private static final String PASSWORD = "2726";
+    private static final String PASSWORD = "01234567890";
 
     private static Connection connection = null;
 
